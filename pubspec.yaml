@@ -1,7 +1,9 @@
 name: exposed
-description: "A new Flutter package project."
+description: "Reduce boilerplate and collection of helpful methods."
 version: 0.0.1
-homepage: https://example.com
+homepage: https://github.com/Hasuki69
+repository: https://github.com/Hasuki69/exposed
+issue_tracker: https://github.com/Hasuki69/exposed/issues
 
 environment:
   sdk: ">=3.4.3 <4.0.0"

@@ -1,6 +1,8 @@
 part of '../extensions.dart';
 
 extension DateTimeExtension on DateTime {
+  String format({String? formatModel}) => DateFormat(formatModel ?? 'yyyy/MM/dd').format(this);
+
   bool get isToday {
     final current = DateTime.now();
     return year == current.year && month == current.month && day == current.day;
