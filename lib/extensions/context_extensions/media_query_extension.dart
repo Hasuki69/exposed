@@ -84,4 +84,20 @@ extension MediaQueryExtension on BuildContext {
   bool get showSidebar => isTablet;
 
   bool get showExpandedSidebar => isDesktop;
+
+  T? responsiveValue<T>({
+    T? mobile,
+    T? tablet,
+    double tabletBreakpoint = _phoneBreakpoint,
+    T? desktop,
+    double desktopBreakpoint = _tabletBreakpoint,
+  }) {
+    var deviceWidth = shortestSide;
+    if (MyPlatform.isDesktop) {
+      deviceWidth = width;
+    }
+    if (deviceWidth >= tabletBreakpoint && desktop != null) return desktop;
+    if (deviceWidth >= desktopBreakpoint && tablet != null) return tablet;
+    return mobile;
+  }
 }
