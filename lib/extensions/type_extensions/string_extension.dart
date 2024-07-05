@@ -1,7 +1,7 @@
 part of '../extensions.dart';
 
 extension StringExtension on String {
-  String get capitalize => split(' ').map((str) => str.capitalizeFirst).join(' ');
+  String get titleCase => split(' ').map((str) => str.capitalizeFirst).join(' ');
 
   String get capitalizeFirst => "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
 
