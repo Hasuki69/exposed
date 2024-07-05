@@ -1,13 +1,13 @@
 part of '../extensions.dart';
 
 extension SizedBoxExtension on num {
-  Widget get horzGap {
+  Widget get vertGap {
     return SizedBox(
       height: double.tryParse(toString()),
     );
   }
 
-  Widget get vertGap {
+  Widget get horzGap {
     return SizedBox(
       width: double.tryParse(toString()),
     );
