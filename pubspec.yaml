@@ -7,15 +7,12 @@ issue_tracker: https://github.com/Hasuki69/exposed/issues
 
 environment:
   sdk: ">=3.4.4 <4.0.0"
-  flutter: ">=3.22.3"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  intl: ^0.19.0
-  web: ^1.0.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0

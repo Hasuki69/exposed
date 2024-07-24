@@ -5,9 +5,7 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart' hide TextDirection;
 
-import '../sources/sources.dart';
 import '../widgets/widgets.dart';
 
 part 'widget_extensions/alignment_extension.dart';
@@ -47,7 +45,6 @@ part 'num_extensions/num_extension.dart';
 part 'num_extensions/sizedbox_extension.dart';
 part 'num_extensions/duration_extension.dart';
 part 'num_extensions/future_extension.dart';
-part 'num_extensions/currency_extension.dart';
 
 part 'type_extensions/map_extension.dart';
 part 'type_extensions/list_extension.dart';
