@@ -1,7 +1,7 @@
 part of '../extensions.dart';
 
 extension SliverExtension on Widget {
-  Widget tosliver({Key? key}) {
+  Widget toSliver({Key? key}) {
     return SliverToBoxAdapter(
       key: key,
       child: this,
