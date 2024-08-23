@@ -2,7 +2,7 @@ part of '../extensions.dart';
 
 extension PaddingExtension on Widget {
   Widget pad(double value, {Key? key}) {
-    return isSliver()
+    return isSliver(this)
         ? SliverPadding(
             key: key,
             padding: EdgeInsets.all(value),
@@ -16,7 +16,7 @@ extension PaddingExtension on Widget {
   }
 
   Widget padFromViewPadding(ViewPadding padding, double devicePixelRatio, {Key? key}) {
-    return isSliver()
+    return isSliver(this)
         ? SliverPadding(
             key: key,
             padding: EdgeInsets.fromViewPadding(padding, devicePixelRatio),
@@ -30,7 +30,7 @@ extension PaddingExtension on Widget {
   }
 
   Widget padLTRB(double left, double top, double right, double bottom, {Key? key}) {
-    return isSliver()
+    return isSliver(this)
         ? SliverPadding(
             key: key,
             padding: EdgeInsets.fromLTRB(left, top, right, bottom),
@@ -44,7 +44,7 @@ extension PaddingExtension on Widget {
   }
 
   Widget padOnly({Key? key, double left = 0.0, double top = 0.0, double right = 0.0, double bottom = 0.0}) {
-    return isSliver()
+    return isSliver(this)
         ? SliverPadding(
             padding: EdgeInsets.only(left: left, top: top, right: right, bottom: bottom),
             sliver: this,
@@ -57,7 +57,7 @@ extension PaddingExtension on Widget {
   }
 
   Widget padSymmetric({Key? key, double vert = 0.0, double horiz = 0.0}) {
-    return isSliver()
+    return isSliver(this)
         ? SliverPadding(
             key: key,
             padding: EdgeInsets.symmetric(vertical: vert, horizontal: horiz),
