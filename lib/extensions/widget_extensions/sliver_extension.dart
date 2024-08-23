@@ -19,17 +19,30 @@ extension SliverExtension on Widget {
   //   return isSliverWidget;
   // }
 
-  bool isSliver(Widget widget, {bool throwOnError = false}) {
+  bool isSliver(Widget widget) {
+    // First, check against known Sliver types
+    if (widget is SliverList ||
+        widget is SliverGrid ||
+        widget is SliverAppBar ||
+        widget is SliverToBoxAdapter ||
+        widget is SliverFillRemaining ||
+        widget is SliverFixedExtentList ||
+        widget is SliverPadding ||
+        widget is SliverPersistentHeader ||
+        widget is SliverPrototypeExtentList ||
+        widget is SliverAnimatedList) {
+      return true;
+    }
+
+    // If the widget isn't a known Sliver, check if its RenderObject is a RenderSliver
     if (widget is RenderObjectWidget) {
-      final element = widget.createElement();
-
-      element.mount(null, null);
-
-      final isRenderSliver = element.renderObject is RenderSliver;
-
-      element.unmount();
-
-      return isRenderSliver;
+      try {
+        final renderObject = widget.createElement();
+        return renderObject is RenderSliver;
+      } catch (e) {
+        // Handle any errors in creating the render object
+        return false;
+      }
     }
 
     return false;
